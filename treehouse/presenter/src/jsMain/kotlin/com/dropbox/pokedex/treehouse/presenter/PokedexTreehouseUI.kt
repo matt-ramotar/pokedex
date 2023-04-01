@@ -9,7 +9,7 @@ import app.cash.redwood.treehouse.TreehouseUi
 import app.cash.redwood.treehouse.lazylayout.compose.LazyColumn
 import app.cash.redwood.treehouse.lazylayout.compose.items
 
-class EmojiSearchTreehouseUi(
+class PokedexTreehouseUI(
     private val httpClient: HttpClient,
     bridge: ProtocolBridge,
 ) : TreehouseUi {
@@ -17,7 +17,7 @@ class EmojiSearchTreehouseUi(
 
     @Composable
     override fun Show() {
-        EmojiSearch(httpClient, lazyColumnProvider)
+        Pokedex(httpClient, lazyColumnProvider)
     }
 }
 

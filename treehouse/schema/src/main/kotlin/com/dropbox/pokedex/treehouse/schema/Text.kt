@@ -1,5 +1,6 @@
 package com.dropbox.pokedex.treehouse.schema
 
+import app.cash.redwood.schema.Default
 import app.cash.redwood.schema.Property
 import app.cash.redwood.schema.Widget
 import com.dropbox.pokedex.treehouse.foundation.Color
@@ -14,6 +15,10 @@ import com.dropbox.pokedex.treehouse.foundation.TextStyle
 @Widget(2)
 data class Text(
     @Property(1) val text: String,
+
+    @Default("null")
     @Property(2) val color: Color?,
+
+    @Default("null")
     @Property(3) val style: TextStyle?,
 )

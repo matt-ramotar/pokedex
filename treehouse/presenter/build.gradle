@@ -14,6 +14,7 @@ kotlin {
                 api libs.redwood.treehouse
                 api libs.redwood.layout.compose
                 api libs.redwood.treehouse.lazylayout.api
+                api project(":treehouse:schema:compose")
             }
         }
 

@@ -11,5 +11,5 @@ dependencies {
 }
 
 redwoodSchema {
-    type.set("com.dropbox.pokedex.schema.Pokedex")
+    type.set("com.dropbox.pokedex.treehouse.schema.Pokedex")
 }

@@ -16,9 +16,9 @@ kotlin {
             dependencies {
                 api "app.cash.redwood:redwood-layout-compose:0.3.0-SNAPSHOT"
 
-                implementation project(":treehouse:schema:widget")
-                implementation project(":treehouse:foundation")
-                implementation project(":treehouse:state")
+                api project(":treehouse:schema:widget")
+                api project(":treehouse:foundation")
+                api project(":treehouse:state")
             }
         }
 
@@ -32,5 +32,5 @@ kotlin {
 
 redwoodSchema {
     source = project(":treehouse:schema")
-    type = 'com.dropbox.pokedex.schema.Pokedex'
+    type = 'com.dropbox.pokedex.treehouse.schema.Pokedex'
 }

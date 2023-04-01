@@ -19,5 +19,5 @@ kotlin {
 
 redwoodSchema {
     source = project(":treehouse:schema")
-    type = 'com.dropbox.pokedex.schema.Pokedex'
+    type = 'com.dropbox.pokedex.treehouse.schema.Pokedex'
 }

@@ -26,8 +26,7 @@ kotlin {
             dependencies {
                 api libs.redwood.treehouse.guest
                 api project(":treehouse:schema:compose:protocol")
-//                api projects.samples.emojiSearch.presenter
-//                implementation projects.samples.emojiSearch.schema.compose.protocol
+                implementation project(":treehouse:presenter")
             }
         }
 
