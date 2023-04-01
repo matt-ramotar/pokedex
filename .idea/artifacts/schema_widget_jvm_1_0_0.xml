@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="schema-widget-jvm-1.0.0">
+    <output-path>$PROJECT_DIR$/common/schema/widget/build/libs</output-path>
+    <root id="archive" name="schema-widget-jvm-1.0.0.jar" />
+  </artifact>
+</component>

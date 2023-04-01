@@ -1,0 +1,21 @@
+package com.dropbox.pokedex.treehouse.foundation
+
+import kotlinx.serialization.Serializable
+
+/**
+ * Represents a font weight.
+ */
+@Serializable
+sealed class FontWeight {
+    object Thin : FontWeight()
+    object ExtraLight : FontWeight()
+    object Light : FontWeight()
+    object Normal : FontWeight()
+    object Medium : FontWeight()
+    object SemiBold : FontWeight()
+    object Bold : FontWeight()
+
+    @Serializable
+    object ExtraBold : FontWeight()
+    object Black : FontWeight()
+}

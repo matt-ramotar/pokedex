@@ -1,0 +1,28 @@
+apply plugin: 'org.jetbrains.kotlin.multiplatform'
+apply plugin: 'app.cash.redwood'
+
+kotlin {
+    js(IR) {
+        browser()
+    }
+    jvm {
+    }
+
+    sourceSets {
+        commonMain {
+            dependencies {
+                api libs.redwood.treehouse
+                api libs.redwood.layout.compose
+                api libs.redwood.treehouse.lazylayout.api
+            }
+        }
+
+        jsMain {
+            dependencies {
+                api libs.redwood.treehouse.guest
+                api project(":treehouse:schema:compose:protocol")
+                api project(":treehouse:schema:compose")
+            }
+        }
+    }
+}

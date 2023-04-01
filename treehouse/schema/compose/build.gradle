@@ -1,0 +1,36 @@
+plugins {
+    id("org.jetbrains.kotlin.multiplatform")
+    id("app.cash.redwood.generator.compose")
+}
+
+kotlin {
+    jvm()
+    iosArm64()
+    iosX64()
+    iosSimulatorArm64()
+    js(IR) { browser() }
+    jvm()
+
+    sourceSets {
+        commonMain {
+            dependencies {
+                api "app.cash.redwood:redwood-layout-compose:0.3.0-SNAPSHOT"
+
+                implementation project(":treehouse:schema:widget")
+                implementation project(":treehouse:foundation")
+                implementation project(":treehouse:state")
+            }
+        }
+
+        jsMain {
+            dependencies {
+                api libs.redwood.treehouse.lazylayout.compose
+            }
+        }
+    }
+}
+
+redwoodSchema {
+    source = project(":treehouse:schema")
+    type = 'com.dropbox.pokedex.schema.Pokedex'
+}

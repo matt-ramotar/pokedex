@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="schema-compose-jvm-1.0.0">
+    <output-path>$PROJECT_DIR$/common/schema/compose/build/libs</output-path>
+    <root id="archive" name="schema-compose-jvm-1.0.0.jar">
+      <element id="module-output" name="pokedex.common.schema.compose.jvmMain" />
+    </root>
+  </artifact>
+</component>

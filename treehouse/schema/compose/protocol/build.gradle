@@ -1,0 +1,23 @@
+apply plugin: 'org.jetbrains.kotlin.multiplatform'
+apply plugin: 'app.cash.redwood.generator.compose.protocol'
+
+archivesBaseName = 'schema-compose-protocol'
+
+kotlin {
+    js(IR) {
+        browser()
+    }
+
+    sourceSets {
+        commonMain {
+            dependencies {
+                api project(":treehouse:schema:widget")
+            }
+        }
+    }
+}
+
+redwoodSchema {
+    source = project(":treehouse:schema")
+    type = 'com.dropbox.pokedex.schema.Pokedex'
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/treehouse" />
+            <option value="$PROJECT_DIR$/treehouse/foundation" />
+            <option value="$PROJECT_DIR$/treehouse/presenter" />
+            <option value="$PROJECT_DIR$/treehouse/schema" />
+            <option value="$PROJECT_DIR$/treehouse/schema/compose" />
+            <option value="$PROJECT_DIR$/treehouse/schema/compose/protocol" />
+            <option value="$PROJECT_DIR$/treehouse/schema/widget" />
+            <option value="$PROJECT_DIR$/treehouse/state" />
+            <option value="$PROJECT_DIR$/treehouse/zipline" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
