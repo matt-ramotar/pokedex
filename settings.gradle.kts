@@ -20,6 +20,7 @@ rootProject.name = "pokedex"
 
 include(
     ":treehouse:foundation",
+    ":treehouse:launcher",
     ":treehouse:presenter",
     ":treehouse:schema",
     ":treehouse:schema:compose",

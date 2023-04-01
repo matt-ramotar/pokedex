@@ -1,0 +1,25 @@
+apply plugin: 'org.jetbrains.kotlin.multiplatform'
+apply plugin: 'com.android.library'
+apply plugin: 'app.cash.zipline'
+
+kotlin {
+    iosArm64()
+    iosX64()
+    iosSimulatorArm64()
+
+    android()
+
+    sourceSets {
+        commonMain {
+            dependencies {
+                implementation project(":treehouse:zipline")
+                implementation libs.redwood.treehouse.host
+                api libs.zipline.loader
+            }
+        }
+    }
+}
+
+android {
+    namespace 'com.dropbox.pokedex.treehouse.launcher'
+}

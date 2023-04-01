@@ -10,6 +10,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/treehouse" />
             <option value="$PROJECT_DIR$/treehouse/foundation" />
+            <option value="$PROJECT_DIR$/treehouse/launcher" />
             <option value="$PROJECT_DIR$/treehouse/presenter" />
             <option value="$PROJECT_DIR$/treehouse/schema" />
             <option value="$PROJECT_DIR$/treehouse/schema/compose" />

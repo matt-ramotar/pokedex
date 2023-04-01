@@ -73,6 +73,7 @@ turbine = "app.cash.turbine:turbine:0.12.3"
 
 
 redwood-treehouse = { group = "app.cash.redwood", name = "redwood-treehouse", version.ref = "redwood" }
+redwood-treehouse-host = { group = "app.cash.redwood", name = "redwood-treehouse-host", version.ref = "redwood" }
 redwood-treehouse-lazylayout-api = { group = "app.cash.redwood", name = "redwood-treehouse-lazylayout-api", version.ref = "redwood" }
 redwood-treehouse-lazylayout-compose = { group = "app.cash.redwood", name = "redwood-treehouse-lazylayout-compose", version.ref = "redwood" }
 redwood-treehouse-lazylayout-schema = { group = "app.cash.redwood", name = "redwood-treehouse-lazylayout-schema", version.ref = "redwood" }
