@@ -1,13 +1,13 @@
-package com.dropbox.pokedex.android
-
+package com.dropbox.pokedex.android.common.treehouse
 
 import androidx.compose.runtime.Composable
 import app.cash.redwood.treehouse.AppService
 import app.cash.redwood.treehouse.TreehouseApp
-import com.dropbox.pokedex.android.widget.PokedexImage
-import com.dropbox.pokedex.android.widget.PokedexText
-import com.dropbox.pokedex.android.widget.PokedexTextInput
+import com.dropbox.pokedex.android.common.treehouse.widget.PokedexImage
+import com.dropbox.pokedex.android.common.treehouse.widget.PokedexText
+import com.dropbox.pokedex.android.common.treehouse.widget.PokedexTextInput
 import com.dropbox.pokedex.treehouse.schema.widget.*
+
 
 class AndroidPokedexWidgetFactory<A : AppService>(
     private val treehouseApp: TreehouseApp<A>,

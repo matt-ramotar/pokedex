@@ -1,4 +1,4 @@
-package com.dropbox.pokedex.android.widget
+package com.dropbox.pokedex.android.common.treehouse.widget
 
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -10,7 +10,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.TextUnitType
 import app.cash.redwood.LayoutModifier
-import com.dropbox.pokedex.android.theme.PIG
+import com.dropbox.pokedex.android.common.pig.PIG
 import com.dropbox.pokedex.treehouse.foundation.Color
 import com.dropbox.pokedex.treehouse.schema.widget.Text
 import com.dropbox.pokedex.treehouse.foundation.Color as PokedexColor

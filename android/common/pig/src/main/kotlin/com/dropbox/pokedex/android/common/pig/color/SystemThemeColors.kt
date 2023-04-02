@@ -1,4 +1,4 @@
-package com.dropbox.pokedex.android.theme.color
+package com.dropbox.pokedex.android.common.pig.color
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.runtime.Composable

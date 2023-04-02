@@ -1,4 +1,4 @@
-package com.dropbox.pokedex.android.theme
+package com.dropbox.pokedex.android.common.pig
 
 import androidx.compose.material.Typography
 import androidx.compose.runtime.Composable

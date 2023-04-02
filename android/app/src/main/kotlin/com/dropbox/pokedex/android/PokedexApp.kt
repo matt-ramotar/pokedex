@@ -31,8 +31,8 @@ class PokedexApp : Application(), ComponentHolder {
     override fun onCreate() {
         val application = this
         coroutineScope.launch {
-            component = DaggerAppComponent.factory().create(application, applicationContext)
             treehouseApp = treehouseApp()
+            component = DaggerAppComponent.factory().create(application, application.treehouseApp, applicationContext)
             super.onCreate()
         }
     }

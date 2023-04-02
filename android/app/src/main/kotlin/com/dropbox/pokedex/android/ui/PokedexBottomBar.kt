@@ -15,8 +15,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.dropbox.pokedex.android.navigation.BottomTabs
 import com.dropbox.pokedex.android.navigation.Screen
-import com.dropbox.pokedex.android.theme.PIG
-import com.dropbox.pokedex.android.theme.color.systemThemeColors
+import com.dropbox.pokedex.android.common.pig.PIG
+import com.dropbox.pokedex.android.common.pig.color.systemThemeColors
 
 @Composable
 fun PokedexBottomBar(navController: NavHostController) {

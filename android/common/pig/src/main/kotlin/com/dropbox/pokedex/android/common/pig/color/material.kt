@@ -1,8 +1,8 @@
-package com.dropbox.pokedex.android.theme.color
+package com.dropbox.pokedex.android.common.pig.color
 
 import androidx.compose.material.Colors
 import androidx.compose.material3.ColorScheme
-import com.dropbox.pokedex.android.theme.color.Colors as PokedexColors
+import com.dropbox.pokedex.android.common.pig.color.Colors as PokedexColors
 
 internal fun PokedexColors.asColorScheme(): ColorScheme = ColorScheme(
     primary = accent,

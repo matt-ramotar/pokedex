@@ -1,6 +1,6 @@
 plugins {
     id("com.android.library")
-    kotlin("android")
+    id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
     id("com.squareup.anvil")
 }
@@ -18,6 +18,6 @@ android {
 }
 
 dependencies {
-    implementation(libs.dagger.dagger)
-    kapt(libs.dagger.compiler)
+    implementation libs.dagger.dagger
+    kapt libs.dagger.compiler
 }

@@ -3,8 +3,8 @@ package com.dropbox.pokedex.android
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.compose.ui.platform.ComposeView
-import com.dropbox.pokedex.android.theme.PokedexTheme
-import com.dropbox.pokedex.android.theme.color.systemThemeColors
+import com.dropbox.pokedex.android.common.pig.PokedexTheme
+import com.dropbox.pokedex.android.common.pig.color.systemThemeColors
 import com.dropbox.pokedex.android.ui.PokedexScaffold
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.Main

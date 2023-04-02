@@ -10,7 +10,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.dropbox.pokedex.android.theme.PIG
+import com.dropbox.pokedex.android.common.pig.PIG
 
 
 @Composable

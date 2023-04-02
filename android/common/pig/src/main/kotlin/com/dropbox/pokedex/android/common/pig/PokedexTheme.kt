@@ -1,4 +1,4 @@
-package com.dropbox.pokedex.android.theme
+package com.dropbox.pokedex.android.common.pig
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
@@ -8,10 +8,10 @@ import androidx.compose.material3.ColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.unit.dp
-import com.dropbox.pokedex.android.theme.color.Colors
-import com.dropbox.pokedex.android.theme.color.LocalColorScheme
-import com.dropbox.pokedex.android.theme.color.LocalColors
-import com.dropbox.pokedex.android.theme.color.asColors
+import com.dropbox.pokedex.android.common.pig.color.Colors
+import com.dropbox.pokedex.android.common.pig.color.LocalColorScheme
+import com.dropbox.pokedex.android.common.pig.color.LocalColors
+import com.dropbox.pokedex.android.common.pig.color.asColors
 import androidx.compose.material3.MaterialTheme as Material3Theme
 import androidx.compose.material3.Shapes as Shapes3
 

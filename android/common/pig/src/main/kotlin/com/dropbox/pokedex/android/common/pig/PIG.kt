@@ -1,13 +1,13 @@
-package com.dropbox.pokedex.android.theme
+package com.dropbox.pokedex.android.common.pig
 
 
 import androidx.compose.material.Typography
 import androidx.compose.material3.ColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.ReadOnlyComposable
-import com.dropbox.pokedex.android.theme.color.Colors
-import com.dropbox.pokedex.android.theme.color.LocalColors
-import com.dropbox.pokedex.android.theme.color.asColorScheme
+import com.dropbox.pokedex.android.common.pig.color.Colors
+import com.dropbox.pokedex.android.common.pig.color.LocalColors
+import com.dropbox.pokedex.android.common.pig.color.asColorScheme
 
 
 object PIG {

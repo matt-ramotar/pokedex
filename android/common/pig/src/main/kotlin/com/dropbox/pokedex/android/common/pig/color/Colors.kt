@@ -1,4 +1,4 @@
-package com.dropbox.pokedex.android.theme.color
+package com.dropbox.pokedex.android.common.pig.color
 
 import androidx.compose.runtime.Stable
 import androidx.compose.runtime.getValue

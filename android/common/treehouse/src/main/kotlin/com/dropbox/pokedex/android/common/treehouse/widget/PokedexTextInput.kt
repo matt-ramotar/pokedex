@@ -1,4 +1,4 @@
-package com.dropbox.pokedex.android.widget
+package com.dropbox.pokedex.android.common.treehouse.widget
 
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
