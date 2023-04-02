@@ -215,19 +215,19 @@ object PigColors {
 
     object Dark {
         private val primary: Color = Color(0xfff7f5f2)
-        private val secondary: Color = Color(0xff1D1F25)
+        private val secondary: Color = Color(0xff242526)
         private val accent: Color = Color(0xff3984ff)
         private val buttonPrimaryHover: Color = Color(0xff4d90ff)
         private val buttonPrimaryActive: Color = Color(0xff5d9aff)
         private val standard: StatefulColor = StatefulColor(
             text = Color(0xfff7f5f2),
             border = Color(142 / 255f, 139 / 255f, 135 / 255f, 0.5f),
-            background = Color(0xff1D2227),
+            background = Color(0xff18191A),
         )
         private val faint: StatefulColor = StatefulColor(
             text = Color(247 / 255f, 245 / 255f, 242 / 255f, 0.6f),
             border = Color(142 / 255f, 139 / 255f, 135 / 255f, 0.2f),
-            background = Color(0xff20262E),
+            background = Color(0xff3A3B3C),
         )
         private val disabled: StatefulColor = StatefulColor(
             text = Color(247 / 255f, 245 / 255f, 242 / 255f, 0.3f),

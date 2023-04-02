@@ -22,7 +22,6 @@ fun Routing(
     NavHost(
         navController = navController, startDestination = Screen.Home.route, modifier = Modifier
             .padding(innerPadding)
-            .padding(8.dp)
     ) {
         composable(Screen.Home.route) {
             HomeTab()
