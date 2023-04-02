@@ -10,6 +10,9 @@ zipline = "0.9.17"
 coil = "2.3.0"
 redwood = "0.3.0-SNAPSHOT"
 ktor = "2.2.4"
+compose-navigation = "2.5.2"
+compose-material3 = "1.1.0-alpha02"
+
 
 [libraries]
 ktor-client-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor" }
@@ -19,6 +22,9 @@ kotlin-gradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", ve
 kotlin-serializationPlugin = { module = "org.jetbrains.kotlin:kotlin-serialization", version.ref = "kotlin" }
 kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+
+compose-material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "compose-material3" }
+
 
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinx-coroutines" }
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
@@ -33,7 +39,7 @@ dokkaPlugin = "org.jetbrains.dokka:dokka-gradle-plugin:1.8.10"
 spotlessPlugin = "com.diffplug.spotless:spotless-plugin-gradle:6.17.0"
 gradleMavenPublishPlugin = "com.vanniktech:gradle-maven-publish-plugin:0.25.1"
 buildConfigPlugin = "com.github.gmazzo:gradle-buildconfig-plugin:3.1.0"
-
+androidx-compose-navigation = { group = "androidx.navigation", name = "navigation-compose", version.ref = "compose-navigation" }
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidx-activity" }
 androidx-appCompat = { module = "androidx.appcompat:appcompat", version = "1.6.1" }
 androidx-core = { module = "androidx.core:core-ktx", version = "1.9.0" }
@@ -53,6 +59,8 @@ jetbrains-compose-ui = { module = "org.jetbrains.compose.ui:ui", version.ref = "
 jetbrains-compose-ui-tooling = { module = "org.jetbrains.compose.ui:ui-tooling", version.ref = "jbCompose" }
 jetbrains-compose-ui-tooling-preview = { module = "org.jetbrains.compose.ui:ui-tooling-preview", version.ref = "jbCompose" }
 
+
+
 androidGradlePlugin = { module = "com.android.tools.build:gradle", version = "7.4.2" }
 kotlinPoet = { module = "com.squareup:kotlinpoet", version = "1.12.0" }
 clikt = { module = "com.github.ajalt.clikt:clikt", version = "3.5.2" }
@@ -70,8 +78,12 @@ zipline-loader = { module = "app.cash.zipline:zipline-loader", version.ref = "zi
 paparazzi-gradlePlugin = { module = "app.cash.paparazzi:paparazzi-gradle-plugin", version = "1.2.0" }
 jimfs = "com.google.jimfs:jimfs:1.2"
 coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
+coil-svg = { module = "io.coil-kt:coil-svg", version.ref = "coil" }
+
 coil-core = { module = "io.coil-kt:coil", version.ref = "coil" }
 turbine = "app.cash.turbine:turbine:0.12.3"
+
+
 
 
 redwood-treehouse = { group = "app.cash.redwood", name = "redwood-treehouse", version.ref = "redwood" }

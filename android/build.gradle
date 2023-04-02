@@ -25,6 +25,7 @@ android {
 
 dependencies {
     implementation libs.coil.compose
+    implementation libs.coil.svg
     implementation libs.google.material
     implementation libs.kotlinx.coroutines.android
     implementation project(":treehouse:launcher")
@@ -43,4 +44,6 @@ dependencies {
     implementation libs.redwood.treehouse.lazylayout.compose.ui
     implementation libs.redwood.treehouse.compose.ui
     implementation libs.redwood.treehouse.host
+    implementation libs.androidx.compose.navigation
+    implementation libs.compose.material3
 }

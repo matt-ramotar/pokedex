@@ -2,8 +2,6 @@ package com.dropbox.pokedex.android
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
-import androidx.compose.foundation.layout.Column
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.ComposeView
 import app.cash.redwood.layout.composeui.ComposeUiRedwoodLayoutWidgetFactory
@@ -12,6 +10,9 @@ import app.cash.redwood.protocol.widget.ProtocolMismatchHandler
 import app.cash.redwood.treehouse.TreehouseContentSource
 import app.cash.redwood.treehouse.TreehouseView
 import app.cash.redwood.treehouse.lazylayout.composeui.ComposeUiRedwoodTreehouseLazyLayoutWidgetFactory
+import com.dropbox.pokedex.android.theme.PokedexTheme
+import com.dropbox.pokedex.android.theme.color.systemThemeColors
+import com.dropbox.pokedex.android.ui.PokedexScaffold
 import com.dropbox.pokedex.treehouse.schema.widget.PokedexDiffConsumingNodeFactory
 import com.dropbox.pokedex.treehouse.schema.widget.PokedexWidgetFactories
 import com.dropbox.pokedex.treehouse.zipline.PokedexPresenter
@@ -51,9 +52,8 @@ class PokedexMainActivity : ComponentActivity() {
 
         val view = ComposeView(this)
         view.setContent {
-            Column {
-                Text("Pokedex")
-                PokedexTreehouseContext(app, widgetSystem, contentSource = treehouseContentSource)
+            PokedexTheme(colors = systemThemeColors()) {
+                PokedexScaffold()
             }
         }
 

@@ -28,3 +28,9 @@ sealed class TextUnit {
         fun px(value: Int): TextUnit = Px(value)
     }
 }
+
+val Int.sp: TextUnit.Sp
+    get() = TextUnit.Sp(this.toFloat())
+
+val Int.px: TextUnit.Px
+    get() = TextUnit.Px(this)

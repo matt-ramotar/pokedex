@@ -11,6 +11,11 @@ import app.cash.redwood.layout.compose.Column
 import com.dropbox.pokedex.common.api.RealPokeApi
 import com.dropbox.pokedex.common.client.HttpClient
 import com.dropbox.pokedex.common.entity.Pokemon
+import com.dropbox.pokedex.treehouse.foundation.Color
+import com.dropbox.pokedex.treehouse.foundation.FontWeight
+import com.dropbox.pokedex.treehouse.foundation.TextStyle
+import com.dropbox.pokedex.treehouse.foundation.sp
+import com.dropbox.pokedex.treehouse.schema.compose.Image
 import com.dropbox.pokedex.treehouse.schema.compose.Text
 
 @Composable
@@ -53,12 +58,19 @@ private fun Loading() {
 
 @Composable
 private fun Pokemon(pokemon: Pokemon) {
+    val url = "https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${pokemon.id}.svg"
+
     Column(
         width = Constraint.Fill,
-        horizontalAlignment = CrossAxisAlignment.Stretch,
-        margin = Margin(horizontal = 24)
+        horizontalAlignment = CrossAxisAlignment.Center,
+        margin = Margin(horizontal = 24),
     ) {
-        Text(pokemon.name)
+        Image(url)
+
+        Text(
+            text = pokemon.name,
+            style = TextStyle(color = Color.named("onBackground"), fontWeight = FontWeight.Bold, fontSize = 48.sp)
+        )
     }
 }
 
