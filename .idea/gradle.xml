@@ -14,6 +14,10 @@
             <option value="$PROJECT_DIR$/android/common/pig" />
             <option value="$PROJECT_DIR$/android/common/scoping" />
             <option value="$PROJECT_DIR$/android/common/treehouse" />
+            <option value="$PROJECT_DIR$/android/feat" />
+            <option value="$PROJECT_DIR$/android/feat/account" />
+            <option value="$PROJECT_DIR$/android/feat/home" />
+            <option value="$PROJECT_DIR$/android/feat/search" />
             <option value="$PROJECT_DIR$/common" />
             <option value="$PROJECT_DIR$/common/api" />
             <option value="$PROJECT_DIR$/common/client" />

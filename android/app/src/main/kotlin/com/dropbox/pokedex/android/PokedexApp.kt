@@ -9,6 +9,7 @@ import app.cash.zipline.loader.withDevelopmentServerPush
 import com.dropbox.pokedex.android.common.scoping.AppScope
 import com.dropbox.pokedex.android.common.scoping.ComponentHolder
 import com.dropbox.pokedex.android.common.scoping.SingleIn
+import com.dropbox.pokedex.android.common.treehouse.RealHostApi
 import com.dropbox.pokedex.android.wiring.AppComponent
 import com.dropbox.pokedex.android.wiring.DaggerAppComponent
 import com.dropbox.pokedex.treehouse.launcher.PokedexAppSpec

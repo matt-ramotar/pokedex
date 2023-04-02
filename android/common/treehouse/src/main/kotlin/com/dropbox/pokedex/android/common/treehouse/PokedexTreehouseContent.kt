@@ -1,4 +1,4 @@
-package com.dropbox.pokedex.android
+package com.dropbox.pokedex.android.common.treehouse
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box

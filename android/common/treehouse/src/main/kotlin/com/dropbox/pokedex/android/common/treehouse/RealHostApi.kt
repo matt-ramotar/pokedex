@@ -1,4 +1,4 @@
-package com.dropbox.pokedex.android
+package com.dropbox.pokedex.android.common.treehouse
 
 import com.dropbox.pokedex.treehouse.zipline.HostApi
 import kotlinx.coroutines.suspendCancellableCoroutine
