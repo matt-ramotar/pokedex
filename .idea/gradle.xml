@@ -4,11 +4,15 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/android" />
+            <option value="$PROJECT_DIR$/android/app" />
+            <option value="$PROJECT_DIR$/android/common" />
+            <option value="$PROJECT_DIR$/android/common/scoping" />
             <option value="$PROJECT_DIR$/common" />
             <option value="$PROJECT_DIR$/common/api" />
             <option value="$PROJECT_DIR$/common/client" />

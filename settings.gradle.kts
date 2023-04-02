@@ -19,7 +19,8 @@ rootProject.name = "pokedex"
 
 
 include(
-    ":android",
+    ":android:app",
+    ":android:common:scoping",
     ":common:api",
     ":common:client",
     ":common:entity",

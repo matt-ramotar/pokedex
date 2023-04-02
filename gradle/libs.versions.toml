@@ -1,4 +1,5 @@
 [versions]
+anvil = "2.4.4"
 kotlin = "1.8.10"
 kotlinx-coroutines = "1.6.4"
 kotlinx-serialization = "1.5.0"
@@ -12,9 +13,15 @@ redwood = "0.3.0-SNAPSHOT"
 ktor = "2.2.4"
 compose-navigation = "2.5.2"
 compose-material3 = "1.1.0-alpha02"
+dagger = "2.45"
 
 
 [libraries]
+anvil-gradle-plugin = { group = "com.squareup.anvil", name = "gradle-plugin", version.ref = "anvil" }
+dagger-dagger = { group = "com.google.dagger", name = "dagger", version.ref = "dagger" }
+dagger-compiler = { group = "com.google.dagger", name = "dagger-compiler", version.ref = "dagger" }
+
+
 ktor-client-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor" }
 ktor-client-cio = { group = "io.ktor", name = "ktor-client-cio", version.ref = "ktor" }
 kotlin-compiler = { module = "org.jetbrains.kotlin:kotlin-compiler", version.ref = "kotlin" }

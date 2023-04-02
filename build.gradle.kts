@@ -13,6 +13,7 @@ buildscript {
         classpath("app.cash.redwood:redwood-gradle-plugin:0.3.0-SNAPSHOT")
         classpath(libs.kotlin.serializationPlugin)
         classpath(libs.zipline.gradlePlugin)
+        classpath(libs.anvil.gradle.plugin)
     }
 }
 

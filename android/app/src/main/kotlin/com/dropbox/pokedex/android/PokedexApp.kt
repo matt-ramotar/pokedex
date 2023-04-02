@@ -1,22 +1,43 @@
 package com.dropbox.pokedex.android
 
-import android.content.Context
+import android.app.Application
 import app.cash.redwood.treehouse.TreehouseApp
 import app.cash.redwood.treehouse.TreehouseAppFactory
 import app.cash.zipline.loader.ManifestVerifier
 import app.cash.zipline.loader.asZiplineHttpClient
 import app.cash.zipline.loader.withDevelopmentServerPush
+import com.dropbox.pokedex.android.common.scoping.AppScope
+import com.dropbox.pokedex.android.common.scoping.ComponentHolder
+import com.dropbox.pokedex.android.common.scoping.SingleIn
+import com.dropbox.pokedex.android.wiring.AppComponent
+import com.dropbox.pokedex.android.wiring.DaggerAppComponent
 import com.dropbox.pokedex.treehouse.launcher.PokedexAppSpec
 import com.dropbox.pokedex.treehouse.zipline.PokedexPresenter
+import com.squareup.anvil.annotations.ContributesBinding
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.launch
 import okhttp3.OkHttpClient
 
-class PokedexApp(
-    private val coroutineScope: CoroutineScope,
-    private val applicationContext: Context
-) {
-    operator fun invoke(): TreehouseApp<PokedexPresenter> {
+@SingleIn(AppScope::class)
+@ContributesBinding(AppScope::class, boundType = Application::class)
+class PokedexApp : Application(), ComponentHolder {
+    private val coroutineScope = CoroutineScope(Dispatchers.IO)
+
+    override lateinit var component: AppComponent
+    lateinit var treehouseApp: TreehouseApp<PokedexPresenter>
+
+    override fun onCreate() {
+        val application = this
+        coroutineScope.launch {
+            component = DaggerAppComponent.factory().create(application, applicationContext)
+            treehouseApp = treehouseApp()
+            super.onCreate()
+        }
+    }
+
+    private fun treehouseApp(): TreehouseApp<PokedexPresenter> {
         val httpClient = OkHttpClient()
         val ziplineHttpClient = httpClient.asZiplineHttpClient()
 
@@ -40,4 +61,6 @@ class PokedexApp(
         treehouseApp.start()
         return treehouseApp
     }
+
 }
+

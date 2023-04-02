@@ -2,6 +2,8 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("app.cash.redwood")
+    id("kotlin-kapt")
+    id("com.squareup.anvil")
 }
 
 android {
@@ -46,4 +48,7 @@ dependencies {
     implementation libs.redwood.treehouse.host
     implementation libs.androidx.compose.navigation
     implementation libs.compose.material3
+    implementation project(":android:common:scoping")
+    implementation(libs.dagger.dagger)
+    kapt(libs.dagger.compiler)
 }
