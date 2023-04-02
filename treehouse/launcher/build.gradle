@@ -22,4 +22,10 @@ kotlin {
 
 android {
     namespace 'com.dropbox.pokedex.treehouse.launcher'
+    compileSdk = 33
+    compileSdkVersion = "android-33"
+
+    defaultConfig {
+        minSdk = 27
+    }
 }

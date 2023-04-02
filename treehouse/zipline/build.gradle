@@ -43,5 +43,5 @@ kotlin {
 }
 
 zipline {
-    mainFunction = 'com.example.redwood.emojisearch.treehouse.preparePresenters'
+    mainFunction = 'com.dropbox.pokedex.treehouse.zipline.preparePresenters'
 }

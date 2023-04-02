@@ -7,6 +7,9 @@ buildscript {
 
     }
     dependencies {
+        classpath(libs.kotlin.gradlePlugin)
+        classpath(libs.jetbrains.compose.gradlePlugin)
+        classpath(libs.androidGradlePlugin)
         classpath("app.cash.redwood:redwood-gradle-plugin:0.3.0-SNAPSHOT")
         classpath(libs.kotlin.serializationPlugin)
         classpath(libs.zipline.gradlePlugin)

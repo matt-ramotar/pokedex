@@ -1,0 +1,26 @@
+apply plugin: 'org.jetbrains.kotlin.multiplatform'
+apply plugin: 'app.cash.redwood.generator.widget.protocol'
+
+kotlin {
+    iosArm64()
+    iosX64()
+    iosSimulatorArm64()
+
+    jvm()
+
+    sourceSets {
+        commonMain {
+            dependencies {
+                api project(":treehouse:schema:widget")
+                api project(":treehouse:foundation")
+                api project(":treehouse:state")
+                api libs.redwood.layout.widget
+            }
+        }
+    }
+}
+
+redwoodSchema {
+    source = project(":treehouse:schema")
+    type = 'com.dropbox.pokedex.treehouse.schema.Pokedex'
+}

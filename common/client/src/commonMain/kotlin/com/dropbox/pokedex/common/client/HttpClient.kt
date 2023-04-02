@@ -1,7 +1,7 @@
-package com.dropbox.pokedex.treehouse.presenter
+package com.dropbox.pokedex.common.client
 
 
 // TODO(Follow up)
-interface HttpClient {
+fun interface HttpClient {
     suspend fun call(url: String, headers: Map<String, String>): String
 }

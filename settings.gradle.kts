@@ -19,6 +19,10 @@ rootProject.name = "pokedex"
 
 
 include(
+    ":android",
+    ":common:api",
+    ":common:client",
+    ":common:entity",
     ":treehouse:foundation",
     ":treehouse:launcher",
     ":treehouse:presenter",
@@ -26,6 +30,7 @@ include(
     ":treehouse:schema:compose",
     ":treehouse:schema:compose:protocol",
     ":treehouse:schema:widget",
+    ":treehouse:schema:widget:protocol",
     ":treehouse:state",
     ":treehouse:zipline"
 )

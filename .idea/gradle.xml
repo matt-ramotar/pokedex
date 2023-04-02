@@ -8,6 +8,11 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/android" />
+            <option value="$PROJECT_DIR$/common" />
+            <option value="$PROJECT_DIR$/common/api" />
+            <option value="$PROJECT_DIR$/common/client" />
+            <option value="$PROJECT_DIR$/common/entity" />
             <option value="$PROJECT_DIR$/treehouse" />
             <option value="$PROJECT_DIR$/treehouse/foundation" />
             <option value="$PROJECT_DIR$/treehouse/launcher" />
@@ -16,6 +21,7 @@
             <option value="$PROJECT_DIR$/treehouse/schema/compose" />
             <option value="$PROJECT_DIR$/treehouse/schema/compose/protocol" />
             <option value="$PROJECT_DIR$/treehouse/schema/widget" />
+            <option value="$PROJECT_DIR$/treehouse/schema/widget/protocol" />
             <option value="$PROJECT_DIR$/treehouse/state" />
             <option value="$PROJECT_DIR$/treehouse/zipline" />
           </set>

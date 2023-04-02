@@ -28,8 +28,8 @@ kotlin {
 }
 
 android {
-    compileSdk = 31
-    compileSdkVersion = "android-31"
+    compileSdk = 33
+    compileSdkVersion = "android-33"
     defaultConfig {
         minSdk = 27
     }

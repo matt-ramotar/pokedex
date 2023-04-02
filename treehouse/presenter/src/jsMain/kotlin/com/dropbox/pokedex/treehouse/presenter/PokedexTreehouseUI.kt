@@ -8,6 +8,7 @@ import app.cash.redwood.protocol.compose.ProtocolBridge
 import app.cash.redwood.treehouse.TreehouseUi
 import app.cash.redwood.treehouse.lazylayout.compose.LazyColumn
 import app.cash.redwood.treehouse.lazylayout.compose.items
+import com.dropbox.pokedex.common.client.HttpClient
 
 class PokedexTreehouseUI(
     private val httpClient: HttpClient,
