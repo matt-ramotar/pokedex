@@ -8,15 +8,16 @@ import androidx.compose.material3.IconButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.dropbox.pokedex.android.navigation.BottomTabs
-import com.dropbox.pokedex.android.navigation.Screen
 import com.dropbox.pokedex.android.common.pig.PIG
 import com.dropbox.pokedex.android.common.pig.color.systemThemeColors
+import com.dropbox.pokedex.android.navigation.BottomTabs
+import com.dropbox.pokedex.android.navigation.Screen
 
 @Composable
 fun PokedexBottomBar(navController: NavHostController) {
@@ -27,7 +28,7 @@ fun PokedexBottomBar(navController: NavHostController) {
 
     fun isSelected(tab: Screen) = currentDestination?.hierarchy?.any { it.route == tab.route } == true
     BottomAppBar(
-        containerColor = PIG.Colors.secondary,
+        containerColor = if (PIG.Colors.isLight) Color.White else Color.Black.copy(alpha = 0.4f),
         actions = {
             BottomTabs.forEach { tab ->
 
