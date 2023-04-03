@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 
 interface ColumnProvider {
     @Composable
-    fun <T> create(
+    fun <T> lazy(
         items: List<T>,
         itemContent: @Composable (item: T) -> Unit,
     )

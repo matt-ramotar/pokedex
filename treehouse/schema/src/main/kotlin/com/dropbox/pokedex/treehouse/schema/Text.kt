@@ -3,8 +3,9 @@ package com.dropbox.pokedex.treehouse.schema
 import app.cash.redwood.schema.Default
 import app.cash.redwood.schema.Property
 import app.cash.redwood.schema.Widget
-import com.dropbox.pokedex.treehouse.foundation.Color
-import com.dropbox.pokedex.treehouse.foundation.TextStyle
+import com.dropbox.pokedex.treehouse.componentbox.Color
+import com.dropbox.pokedex.treehouse.componentbox.Text
+import com.dropbox.pokedex.treehouse.componentbox.TextStyle
 
 /**
  * Represents a piece of text with optional color and text style information.
@@ -14,11 +15,11 @@ import com.dropbox.pokedex.treehouse.foundation.TextStyle
  */
 @Widget(2)
 data class Text(
-    @Property(1) val text: String,
+    @Property(1) override val text: String,
 
     @Default("null")
-    @Property(2) val color: Color?,
+    @Property(2) override val color: Color?,
 
     @Default("null")
-    @Property(3) val style: TextStyle?,
-)
+    @Property(3) override val style: TextStyle?,
+) : Text

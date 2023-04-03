@@ -2,10 +2,10 @@ package com.dropbox.pokedex.treehouse.schema
 
 import app.cash.redwood.schema.Property
 import app.cash.redwood.schema.Widget
-import com.dropbox.pokedex.treehouse.foundation.AnnotatedStringElement
-import com.dropbox.pokedex.treehouse.foundation.InlineTextContent
-import com.dropbox.pokedex.treehouse.foundation.SpanStyle
-import com.dropbox.pokedex.treehouse.foundation.TextStyle
+import com.dropbox.pokedex.treehouse.componentbox.AnnotatedStringElement
+import com.dropbox.pokedex.treehouse.componentbox.InlineTextContent
+import com.dropbox.pokedex.treehouse.componentbox.SpanStyle
+import com.dropbox.pokedex.treehouse.componentbox.TextStyle
 
 /**
  * Enables text with inline styling.

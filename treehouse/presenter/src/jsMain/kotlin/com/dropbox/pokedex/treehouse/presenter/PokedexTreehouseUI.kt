@@ -26,10 +26,7 @@ private class LazyColumnProvider(
     private val bridge: ProtocolBridge,
 ) : ColumnProvider {
     @Composable
-    override fun <T> create(
-        items: List<T>,
-        itemContent: @Composable (item: T) -> Unit,
-    ) = with(bridge) {
+    override fun <T> lazy(items: List<T>, itemContent: (item: T) -> Unit)  = with(bridge) {
         LazyColumn {
             items(items, itemContent)
         }

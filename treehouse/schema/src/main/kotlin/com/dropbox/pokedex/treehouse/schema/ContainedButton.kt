@@ -4,10 +4,10 @@ import app.cash.redwood.layout.RowScope
 import app.cash.redwood.schema.Children
 import app.cash.redwood.schema.Property
 import app.cash.redwood.schema.Widget
-import com.dropbox.pokedex.treehouse.foundation.Color
-import com.dropbox.pokedex.treehouse.foundation.Dp
-import com.dropbox.pokedex.treehouse.foundation.Modifier
-import com.dropbox.pokedex.treehouse.foundation.Shape
+import com.dropbox.pokedex.treehouse.componentbox.Color
+import com.dropbox.pokedex.treehouse.componentbox.Dp
+import com.dropbox.pokedex.treehouse.componentbox.Modifier
+import com.dropbox.pokedex.treehouse.componentbox.Shape
 
 @Widget(5)
 data class ContainedButton(

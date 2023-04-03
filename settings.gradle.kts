@@ -28,7 +28,7 @@ include(
     ":common:api",
     ":common:client",
     ":common:entity",
-    ":treehouse:foundation",
+    ":treehouse:componentbox",
     ":treehouse:launcher",
     ":treehouse:presenter",
     ":treehouse:schema",

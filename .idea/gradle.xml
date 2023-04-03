@@ -22,7 +22,7 @@
             <option value="$PROJECT_DIR$/common/client" />
             <option value="$PROJECT_DIR$/common/entity" />
             <option value="$PROJECT_DIR$/treehouse" />
-            <option value="$PROJECT_DIR$/treehouse/foundation" />
+            <option value="$PROJECT_DIR$/treehouse/componentbox" />
             <option value="$PROJECT_DIR$/treehouse/launcher" />
             <option value="$PROJECT_DIR$/treehouse/presenter" />
             <option value="$PROJECT_DIR$/treehouse/schema" />

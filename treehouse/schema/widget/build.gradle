@@ -16,7 +16,7 @@ kotlin {
                 api 'app.cash.redwood:redwood-layout-widget:0.3.0-SNAPSHOT'
                 api 'app.cash.redwood:redwood-treehouse-lazylayout-widget:0.3.0-SNAPSHOT'
                 implementation project(":treehouse:state")
-                implementation project(":treehouse:foundation")
+                implementation project(":treehouse:componentbox")
             }
         }
     }

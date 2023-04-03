@@ -11,12 +11,12 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.TextUnitType
 import app.cash.redwood.LayoutModifier
 import com.dropbox.pokedex.android.common.pig.PIG
-import com.dropbox.pokedex.treehouse.foundation.Color
+import com.dropbox.pokedex.treehouse.componentbox.Color
 import com.dropbox.pokedex.treehouse.schema.widget.Text
-import com.dropbox.pokedex.treehouse.foundation.Color as PokedexColor
-import com.dropbox.pokedex.treehouse.foundation.FontWeight as PokedexFontWeight
-import com.dropbox.pokedex.treehouse.foundation.TextStyle as PokedexTextStyle
-import com.dropbox.pokedex.treehouse.foundation.TextUnit as PokedexTextUnit
+import com.dropbox.pokedex.treehouse.componentbox.Color as PokedexColor
+import com.dropbox.pokedex.treehouse.componentbox.FontWeight as PokedexFontWeight
+import com.dropbox.pokedex.treehouse.componentbox.TextStyle as PokedexTextStyle
+import com.dropbox.pokedex.treehouse.componentbox.TextUnit as PokedexTextUnit
 
 
 internal class PokedexText : Text<@Composable () -> Unit> {
@@ -67,10 +67,27 @@ fun PokedexFontWeight?.compose(): FontWeight = when (this) {
     null -> FontWeight.Normal
 }
 
-fun PokedexTextStyle?.compose() = TextStyle(
-    fontSize = this?.fontSize.compose(),
-    fontWeight = this?.fontWeight.compose()
-)
+fun PokedexTextStyle?.compose() = when (this) {
+    is PokedexTextStyle.Name -> when (this.value) {
+        "h1" -> PIG.Typography.h1
+        "h2" -> PIG.Typography.h2
+        "h3" -> PIG.Typography.h3
+        "h4" -> PIG.Typography.h4
+        "h5" -> PIG.Typography.h5
+        "h6" -> PIG.Typography.h6
+        "body1" -> PIG.Typography.body1
+        "body2" -> PIG.Typography.body2
+        "caption" -> PIG.Typography.caption
+        else -> PIG.Typography.body1
+    }
+
+    is PokedexTextStyle.Style -> TextStyle(
+        fontSize = fontSize.compose(),
+        fontWeight = fontWeight.compose()
+    )
+
+    null -> PIG.Typography.body1
+}
 
 @Composable
 fun PokedexColor?.compose() = when (this) {

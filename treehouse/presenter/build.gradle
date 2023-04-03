@@ -17,6 +17,8 @@ kotlin {
                 api project(":treehouse:schema:compose")
                 implementation project(":common:api")
                 implementation project(":common:client")
+                implementation libs.jetbrains.compose.material
+                implementation libs.jetbrains.compose.ui
             }
         }
 
