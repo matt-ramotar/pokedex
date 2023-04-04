@@ -12,8 +12,8 @@ fun graph() {
         name = "HostApi",
     )
 
-    val hostGraphPresenter = zipline.take<HostGraphPresenter>(
-        name = "HostGraphPresenter",
+    val hostController = zipline.take<HostController>(
+        name = "HostController",
     )
 
     zipline.bind<PokedexGraphPresenter>(
@@ -21,8 +21,8 @@ fun graph() {
         instance = RealPokedexGraphPresenter(
             hostApi,
             zipline.json,
-            hostGraphPresenter.start,
-            hostGraphPresenter.content
+            hostController.start,
+            hostController.content
         )
     )
 }

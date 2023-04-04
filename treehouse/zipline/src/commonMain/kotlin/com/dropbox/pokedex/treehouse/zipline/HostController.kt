@@ -9,8 +9,8 @@ import kotlin.experimental.ExperimentalObjCName
 import kotlin.native.ObjCName
 
 @OptIn(ExperimentalObjCName::class)
-@ObjCName("HostApi", exact = true)
-interface HostGraphPresenter : ZiplineService {
+@ObjCName("HostController", exact = true)
+interface HostController : ZiplineService {
     val start: ComponentBoxId
     val content: Map<ForestId, @Composable (slots: Map<TreeId, @Composable () -> Unit>) -> Unit>
 }
