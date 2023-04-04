@@ -51,15 +51,17 @@ class PokedexApp : Application(), ComponentHolder {
     }
 
     override lateinit var component: AppComponent
-    lateinit var treehouseApp: TreehouseApp<PokedexPresenter>
+//    lateinit var treehouseApp: TreehouseApp<PokedexPresenter>
     lateinit var graphTreehouseApp: TreehouseApp<PokedexGraphPresenter>
 
     override fun onCreate() {
         val application = this
+        component = DaggerAppComponent.factory().create(application, applicationContext)
+
         coroutineScope.launch {
-            treehouseApp = treehouseApp()
             graphTreehouseApp = treehouseGraphApp(hostController)
-            component = DaggerAppComponent.factory().create(application, application.treehouseApp, applicationContext)
+
+//            treehouseApp = treehouseApp()
             super.onCreate()
         }
     }

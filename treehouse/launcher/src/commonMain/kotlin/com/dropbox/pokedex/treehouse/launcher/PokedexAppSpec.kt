@@ -35,8 +35,29 @@ class PokedexGraphAppSpec(
         get() = SerializersModules.treehouse
 
     override fun bindServices(zipline: Zipline) {
+        println(
+            """
+                @Zipline Binding HostApi....
+            """.trimIndent()
+        )
         zipline.bind<HostApi>("HostApi", hostApi)
-        zipline.bind<HostController>("HostController", hostController)
+        println(
+            """
+                @Zipline Bound HostApi....
+            """.trimIndent()
+        )
+
+        println(
+            """
+                @Zipline Binding HostController!
+            """.trimIndent()
+        )
+        zipline.bind<HostController>("HostController", hostController as HostController)
+        println(
+            """
+                @Zipline Bound HostController!
+            """.trimIndent()
+        )
     }
 
     override fun create(zipline: Zipline): PokedexGraphPresenter {

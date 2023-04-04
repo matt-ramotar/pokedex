@@ -31,6 +31,8 @@ class PokedexGraphTreehouseUI(
 ) : TreehouseUi {
 
     private val lazyColumnProvider = LazyColumnProvider(bridge)
+
+    @Composable
     override fun Show() {
         PokedexGraph(httpClient, lazyColumnProvider, start, content)
     }
@@ -41,7 +43,7 @@ private class LazyColumnProvider(
     private val bridge: ProtocolBridge,
 ) : ColumnProvider {
     @Composable
-    override fun <T> lazy(items: List<T>, itemContent: (item: T) -> Unit) = with(bridge) {
+    override fun <T> lazy(items: List<T>, itemContent: @Composable (item: T) -> Unit) = with(bridge) {
         LazyColumn {
             items(items, itemContent)
         }

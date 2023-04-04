@@ -5,7 +5,9 @@ import com.dropbox.pokedex.treehouse.componentbox.ComponentBoxId
 import com.dropbox.pokedex.treehouse.componentbox.ForestId
 import com.dropbox.pokedex.treehouse.componentbox.TreeId
 import com.dropbox.pokedex.treehouse.zipline.HostController
+import kotlinx.serialization.Serializable
 
+@Serializable
 class RealHostController(override val start: ComponentBoxId) : HostController {
 
     private val mutableContent:

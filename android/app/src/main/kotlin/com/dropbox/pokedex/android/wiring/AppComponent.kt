@@ -17,7 +17,6 @@ interface AppComponent {
     interface Factory {
         fun create(
             @BindsInstance pokedexApp: PokedexApp,
-            @BindsInstance treehouseApp: TreehouseApp<PokedexPresenter>,
             @BindsInstance applicationContext: Context,
         ): AppComponent
     }

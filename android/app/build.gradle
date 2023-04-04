@@ -4,6 +4,7 @@ plugins {
     id("app.cash.redwood")
     id("kotlin-kapt")
     id("com.squareup.anvil")
+    id("org.jetbrains.kotlin.plugin.serialization")
 }
 
 android {

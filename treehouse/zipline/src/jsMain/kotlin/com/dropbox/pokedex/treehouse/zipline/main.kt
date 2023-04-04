@@ -7,7 +7,7 @@ private val zipline by lazy { Zipline.get(SerializersModules.treehouse) }
 
 @OptIn(ExperimentalJsExport::class)
 @JsExport
-fun preparePresenters() {
+fun main() {
     val hostApi = zipline.take<HostApi>(
         name = "HostApi",
     )

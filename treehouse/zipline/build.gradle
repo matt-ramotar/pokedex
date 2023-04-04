@@ -44,5 +44,5 @@ kotlin {
 }
 
 zipline {
-    mainFunction = 'com.dropbox.pokedex.treehouse.zipline.preparePresenters'
+    mainFunction = 'com.dropbox.pokedex.treehouse.zipline.graph'
 }
