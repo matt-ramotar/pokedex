@@ -8,5 +8,6 @@ package com.dropbox.pokedex.treehouse.componentbox
  */
 
 interface Forest : ComponentBox {
+    val id: ForestId
     val trees: MutableMap<TreeId, Tree>
 }

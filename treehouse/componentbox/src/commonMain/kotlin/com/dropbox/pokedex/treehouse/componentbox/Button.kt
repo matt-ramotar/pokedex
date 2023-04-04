@@ -29,7 +29,7 @@ sealed interface Button : Component {
         val contentColor: Color?
         val elevation: Dp?
         val shape: Shape?
-        val children: MutableList<Component>
+        val content: Component
     }
 
     /**

@@ -1,11 +1,9 @@
 package com.dropbox.pokedex.treehouse.presenter
 
-import androidx.compose.foundation.layout.Row
 import androidx.compose.runtime.*
 import androidx.compose.ui.text.input.TextFieldValue
 import com.dropbox.pokedex.common.client.HttpClient
-import com.dropbox.pokedex.treehouse.foundation.TextStyle
-import com.dropbox.pokedex.treehouse.schema.compose.Text
+import com.dropbox.pokedex.treehouse.componentbox.TextStyle
 import com.dropbox.pokedex.treehouse.schema.compose.TextInput
 import com.dropbox.pokedex.treehouse.state.TextFieldState
 
@@ -28,21 +26,6 @@ fun PokedexTab(
     httpClient: HttpClient,
     columnProvider: ColumnProvider
 ) {
-
-    val items = listOf(
-        PokedexTabComponent.Text,
-        PokedexTabComponent.Search,
-        Pok
-    )
-
-    columnProvider.lazy() {
-        Row {
-
-            Text(text = "What Pokémon are you looking for?", style = TextStyle.Name("h4"))
-        }
-        Search()
-
-    }
 
 }
 

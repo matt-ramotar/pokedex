@@ -11,10 +11,10 @@ import app.cash.redwood.layout.compose.Column
 import com.dropbox.pokedex.common.api.RealPokeApi
 import com.dropbox.pokedex.common.client.HttpClient
 import com.dropbox.pokedex.common.entity.Pokemon
-import com.dropbox.pokedex.treehouse.foundation.Color
-import com.dropbox.pokedex.treehouse.foundation.FontWeight
-import com.dropbox.pokedex.treehouse.foundation.TextStyle
-import com.dropbox.pokedex.treehouse.foundation.sp
+import com.dropbox.pokedex.treehouse.componentbox.Color
+import com.dropbox.pokedex.treehouse.componentbox.FontWeight
+import com.dropbox.pokedex.treehouse.componentbox.TextStyle
+import com.dropbox.pokedex.treehouse.componentbox.sp
 import com.dropbox.pokedex.treehouse.schema.compose.Image
 import com.dropbox.pokedex.treehouse.schema.compose.Text
 
@@ -69,7 +69,7 @@ private fun Pokemon(pokemon: Pokemon) {
 
         Text(
             text = pokemon.name,
-            style = TextStyle(color = Color.named("onBackground"), fontWeight = FontWeight.Bold, fontSize = 48.sp)
+            style = TextStyle.Style(color = Color.named("onBackground"), fontWeight = FontWeight.Bold, fontSize = 48.sp)
         )
     }
 }

@@ -28,5 +28,4 @@ class AndroidPokedexWidgetFactory<A : AppService>(
     override fun AnnotatedString(): AnnotatedString<() -> Unit> {
         TODO("Not yet implemented")
     }
-
 }

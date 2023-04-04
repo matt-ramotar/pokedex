@@ -67,6 +67,7 @@ fun PokedexFontWeight?.compose(): FontWeight = when (this) {
     null -> FontWeight.Normal
 }
 
+@Composable
 fun PokedexTextStyle?.compose() = when (this) {
     is PokedexTextStyle.Name -> when (this.value) {
         "h1" -> PIG.Typography.h1

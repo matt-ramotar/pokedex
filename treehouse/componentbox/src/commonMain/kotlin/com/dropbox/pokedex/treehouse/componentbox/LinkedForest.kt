@@ -7,7 +7,7 @@ package com.dropbox.pokedex.treehouse.componentbox
  * For example, an onboarding flow.
  */
 interface LinkedForest : ComponentBox {
-    var root: Node?
+    val root: Node
     val nodes: MutableList<Node>
 
     interface Node : Tree {

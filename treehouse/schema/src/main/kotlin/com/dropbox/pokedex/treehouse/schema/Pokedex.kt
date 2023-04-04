@@ -13,10 +13,6 @@ import app.cash.redwood.treehouse.lazylayout.RedwoodTreehouseLazyLayout
         Icon::class,
         ContainedButton::class,
         AnnotatedString::class,
-        Graph::class,
-        Forest::class,
-        LinkedForest::class,
-        Tree::class
     ],
     dependencies = [
         Dependency(1, RedwoodLayout::class),

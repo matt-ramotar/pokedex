@@ -7,6 +7,7 @@ package com.dropbox.pokedex.treehouse.componentbox
  */
 
 interface Graph {
+    val id: GraphId
     val start: ComponentBoxId
     val graph: Map<ComponentBoxId, ComponentBox>
 }

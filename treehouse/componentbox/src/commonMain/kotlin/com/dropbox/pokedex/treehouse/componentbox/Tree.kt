@@ -5,5 +5,6 @@ package com.dropbox.pokedex.treehouse.componentbox
  * Represents the hierarchical structure of UI components. For example, a screen.
  */
 interface Tree : ComponentBox {
+    val id: TreeId
     val root: Component
 }
