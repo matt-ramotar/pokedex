@@ -10,6 +10,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.dropbox.pokedex.android.feat.account.AccountTab
 import com.dropbox.pokedex.android.feat.pokedex.PokedexTab
+import com.dropbox.pokedex.android.ui.Upgrade
 
 
 @Composable
@@ -27,6 +28,10 @@ fun Routing(
 
         composable(Screen.Account.route) {
             AccountTab()
+        }
+
+        composable(Screen.Upgrade.route) {
+            Upgrade()
         }
     }
 }

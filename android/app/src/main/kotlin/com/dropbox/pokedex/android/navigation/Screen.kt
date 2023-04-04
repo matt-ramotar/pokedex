@@ -7,12 +7,15 @@ private const val ACCOUNT_ROUTE = "account"
 private const val SEARCH_ROUTE = "search"
 private const val NOTIFICATION_ROUTE = "notification"
 private const val ACTIVITY_ROUTE = "activity"
+private const val UPGRADE_ROUTE = "upgrade"
+
 
 private const val HOME = "HOME"
 private const val ACCOUNT = "ACCOUNT"
 private const val SEARCH = "SEARCH"
 private const val NOTIFICATION = "NOTIFICATION"
 private const val ACTIVITY = "ACTIVITY"
+private const val UPGRADE = "UPGRADE"
 
 sealed class Screen(
     val route: String,
@@ -27,4 +30,6 @@ sealed class Screen(
 
     object Search : Screen(SEARCH_ROUTE, SEARCH, R.drawable.search, R.drawable.search)
     object Activity : Screen(ACTIVITY_ROUTE, ACTIVITY, R.drawable.activity_fill, R.drawable.activity)
+    object Upgrade : Screen(UPGRADE_ROUTE, UPGRADE, R.drawable.upgrade, R.drawable.upgrade)
+
 }
