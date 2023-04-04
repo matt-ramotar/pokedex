@@ -8,6 +8,9 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import app.cash.redwood.treehouse.TreehouseApp
+import app.cash.redwood.treehouse.TreehouseView
+import com.dropbox.pokedex.android.PokedexApp
 import com.dropbox.pokedex.android.feat.account.AccountTab
 import com.dropbox.pokedex.android.feat.pokedex.PokedexTab
 import com.dropbox.pokedex.android.ui.Upgrade
@@ -15,6 +18,8 @@ import com.dropbox.pokedex.android.ui.Upgrade
 
 @Composable
 fun Routing(
+    app: PokedexApp,
+    widgets: TreehouseView.WidgetSystem,
     navController: NavHostController,
     innerPadding: PaddingValues,
 ) {
@@ -31,7 +36,7 @@ fun Routing(
         }
 
         composable(Screen.Upgrade.route) {
-            Upgrade()
+            Upgrade(app, widgets)
         }
     }
 }

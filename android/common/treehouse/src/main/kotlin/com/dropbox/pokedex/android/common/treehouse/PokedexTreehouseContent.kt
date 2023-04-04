@@ -16,7 +16,7 @@ import app.cash.redwood.widget.compose.ComposeWidgetChildren
 import kotlinx.coroutines.flow.MutableStateFlow
 
 @Composable
-fun <A : AppService> PokedexTreehouseContext(
+fun <A : AppService> PokedexTreehouseContent(
     treehouseApp: TreehouseApp<A>,
     widgetSystem: TreehouseView.WidgetSystem,
     codeListener: CodeListener = CodeListener(),
