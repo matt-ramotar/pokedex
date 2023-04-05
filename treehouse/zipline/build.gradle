@@ -20,6 +20,7 @@ kotlin {
                 api libs.redwood.treehouse
                 api libs.redwood.treehouse.lazylayout.api
                 api project(":treehouse:componentbox")
+                implementation project(":treehouse:presenter")
             }
         }
 
@@ -27,7 +28,6 @@ kotlin {
             dependencies {
                 api libs.redwood.treehouse.guest
                 api project(":treehouse:schema:compose:protocol")
-                implementation project(":treehouse:presenter")
             }
         }
 
@@ -44,5 +44,5 @@ kotlin {
 }
 
 zipline {
-    mainFunction = 'com.dropbox.pokedex.treehouse.zipline.graph'
+    mainFunction = 'com.dropbox.pokedex.treehouse.zipline.upgradePage'
 }

@@ -4,7 +4,8 @@ import app.cash.redwood.treehouse.FrameClockService
 import app.cash.redwood.treehouse.StandardFrameClockService
 import app.cash.redwood.treehouse.ZiplineTreehouseUi
 import app.cash.redwood.treehouse.asZiplineTreehouseUi
-import com.dropbox.pokedex.treehouse.presenter.PokedexGraphTreehouseUI
+import com.dropbox.pokedex.treehouse.presenter.HybridUpgradePage
+import com.dropbox.pokedex.treehouse.presenter.HybridUpgradePageTreehouseUI
 import com.dropbox.pokedex.treehouse.presenter.PokedexTreehouseUI
 import com.dropbox.pokedex.treehouse.schema.compose.PokedexProtocolBridge
 import kotlinx.serialization.json.Json
@@ -24,20 +25,25 @@ class RealPokedexPresenter(
     }
 }
 
-
-class RealPokedexGraphPresenter(
+class RealHybridUpgradePagePresenter(
     private val hostApi: HostApi,
     private val json: Json,
-    private val start: String,
-    private val content: Map<String, (slots: Map<String, () -> Unit>) -> Unit>
-) : PokedexGraphPresenter {
+    private val controller: HybridUpgradePageController,
     override val frameClockService: FrameClockService = StandardFrameClockService
+) : HybridUpgradePagePresenter {
     override fun launch(): ZiplineTreehouseUi {
-        val bridge = PokedexProtocolBridge.create(json)
-        val treehouseUi = PokedexGraphTreehouseUI(hostApi::httpCall, bridge, start, content)
-        return treehouseUi.asZiplineTreehouseUi(
-            bridge = bridge,
-            widgetVersion = 0U
-        )
+        try {
+            println("launching")
+            val bridge = PokedexProtocolBridge.create(json)
+            val treehouseUi =
+                HybridUpgradePageTreehouseUI(hostApi::httpCall, bridge, controller::page)
+            return treehouseUi.asZiplineTreehouseUi(
+                bridge = bridge,
+                widgetVersion = 0U
+            )
+        } catch (error: Throwable) {
+            println(error)
+            throw error
+        }
     }
 }

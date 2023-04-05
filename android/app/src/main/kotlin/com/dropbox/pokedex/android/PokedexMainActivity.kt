@@ -3,11 +3,11 @@ package com.dropbox.pokedex.android
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.compose.ui.platform.ComposeView
-import com.dropbox.pokedex.android.common.pig.PokedexTheme
-import com.dropbox.pokedex.android.common.pig.color.systemThemeColors
-import com.dropbox.pokedex.android.ui.PokedexScaffold
+import app.cash.redwood.treehouse.TreehouseContentSource
+import com.dropbox.pokedex.android.common.treehouse.PokedexTreehouseContent
 import com.dropbox.pokedex.android.wiring.AppComponent
 import com.dropbox.pokedex.android.wiring.AppDependencies
+import com.dropbox.pokedex.treehouse.zipline.HybridUpgradePagePresenter
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.Main
 import kotlinx.coroutines.cancel
@@ -18,11 +18,21 @@ class PokedexMainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val treehouseContentSource = TreehouseContentSource(HybridUpgradePagePresenter::launch)
+
+
         val view = ComposeView(this)
         view.setContent {
-            PokedexTheme(colors = systemThemeColors()) {
-                PokedexScaffold(appDependencies.app, appDependencies.widgets)
-            }
+//            PokedexTheme(colors = systemThemeColors()) {
+//                PokedexScaffold(appDependencies.app, appDependencies.widgets)
+//            }
+
+            PokedexTreehouseContent<HybridUpgradePagePresenter>(
+                appDependencies.app.hybridUpgrade,
+                appDependencies.widgets,
+                contentSource = treehouseContentSource
+            )
         }
 
         setContentView(view)

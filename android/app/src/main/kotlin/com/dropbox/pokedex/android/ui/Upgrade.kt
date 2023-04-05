@@ -7,15 +7,15 @@ import app.cash.redwood.treehouse.TreehouseView
 import com.dropbox.pokedex.android.PokedexApp
 import com.dropbox.pokedex.android.common.pig.PokedexTheme
 import com.dropbox.pokedex.android.common.treehouse.PokedexTreehouseContent
-import com.dropbox.pokedex.treehouse.zipline.PokedexGraphPresenter
+import com.dropbox.pokedex.treehouse.zipline.HybridUpgradePagePresenter
 
 @Composable
 fun Upgrade(app: PokedexApp, widgets: TreehouseView.WidgetSystem) {
     Text("Upgrade")
-    val treehouseContentSource = TreehouseContentSource(PokedexGraphPresenter::launch)
+    val treehouseContentSource = TreehouseContentSource(HybridUpgradePagePresenter::launch)
     PokedexTheme {
-        PokedexTreehouseContent<PokedexGraphPresenter>(
-            app.graphTreehouseApp,
+        PokedexTreehouseContent<HybridUpgradePagePresenter>(
+            app.hybridUpgrade,
             widgets,
             contentSource = treehouseContentSource
         )

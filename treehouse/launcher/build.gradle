@@ -13,6 +13,7 @@ kotlin {
         commonMain {
             dependencies {
                 implementation project(":treehouse:zipline")
+                implementation project(":treehouse:presenter")
                 implementation libs.redwood.treehouse.host
                 api libs.zipline.loader
             }

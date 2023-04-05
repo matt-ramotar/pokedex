@@ -22,21 +22,22 @@ object AppModule {
 
     @SingleIn(AppScope::class)
     @Provides
-    fun provideWidgets(app: PokedexApp): TreehouseView.WidgetSystem = object : TreehouseView.WidgetSystem {
-        override fun widgetFactory(
-            json: Json,
-            protocolMismatchHandler: ProtocolMismatchHandler,
-        ) = PokedexDiffConsumingNodeFactory<@Composable () -> Unit>(
-            provider = PokedexWidgetFactories(
-                Pokedex = AndroidPokedexWidgetFactory(app.graphTreehouseApp),
-                RedwoodLayout = ComposeUiRedwoodLayoutWidgetFactory(),
-                RedwoodTreehouseLazyLayout = ComposeUiRedwoodTreehouseLazyLayoutWidgetFactory(
-                    app.graphTreehouseApp,
-                    this
+    fun provideWidgets(app: PokedexApp): TreehouseView.WidgetSystem =
+        object : TreehouseView.WidgetSystem {
+            override fun widgetFactory(
+                json: Json,
+                protocolMismatchHandler: ProtocolMismatchHandler,
+            ) = PokedexDiffConsumingNodeFactory<@Composable () -> Unit>(
+                provider = PokedexWidgetFactories(
+                    Pokedex = AndroidPokedexWidgetFactory(app.hybridUpgrade),
+                    RedwoodLayout = ComposeUiRedwoodLayoutWidgetFactory(),
+                    RedwoodTreehouseLazyLayout = ComposeUiRedwoodTreehouseLazyLayoutWidgetFactory(
+                        app.hybridUpgrade,
+                        this
+                    ),
                 ),
-            ),
-            json = json,
-            mismatchHandler = protocolMismatchHandler,
-        )
-    }
+                json = json,
+                mismatchHandler = protocolMismatchHandler,
+            )
+        }
 }

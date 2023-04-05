@@ -1,5 +1,7 @@
 apply plugin: 'org.jetbrains.kotlin.multiplatform'
+apply plugin: 'org.jetbrains.kotlin.plugin.serialization'
 apply plugin: 'app.cash.redwood'
+apply plugin: 'com.android.library'
 
 kotlin {
     js(IR) {
@@ -7,6 +9,10 @@ kotlin {
     }
     jvm {
     }
+    android()
+    iosArm64()
+    iosX64()
+    iosSimulatorArm64()
 
     sourceSets {
         commonMain {
@@ -30,5 +36,15 @@ kotlin {
                 api project(":treehouse:schema:compose")
             }
         }
+    }
+}
+
+android {
+    namespace 'com.dropbox.pokedex.treehouse.presenter'
+    compileSdk = 33
+    compileSdkVersion = "android-33"
+
+    defaultConfig {
+        minSdk = 27
     }
 }

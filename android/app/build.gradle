@@ -54,6 +54,7 @@ dependencies {
     implementation project(":android:common:treehouse")
     implementation project(":android:feat:account")
     implementation project(":android:feat:pokedex")
+    implementation project(":treehouse:presenter")
     implementation(libs.dagger.dagger)
     kapt(libs.dagger.compiler)
 }
