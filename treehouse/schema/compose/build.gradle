@@ -17,7 +17,7 @@ kotlin {
                 api "app.cash.redwood:redwood-layout-compose:0.3.0-SNAPSHOT"
 
                 api project(":treehouse:schema:widget")
-                api project(":treehouse:foundation")
+                api project(":treehouse:componentbox")
                 api project(":treehouse:state")
             }
         }

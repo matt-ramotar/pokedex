@@ -19,6 +19,7 @@ kotlin {
             dependencies {
                 api libs.redwood.treehouse
                 api libs.redwood.treehouse.lazylayout.api
+                implementation project(":treehouse:componentbox")
             }
         }
 

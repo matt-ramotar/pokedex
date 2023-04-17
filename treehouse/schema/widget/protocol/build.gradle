@@ -12,7 +12,7 @@ kotlin {
         commonMain {
             dependencies {
                 api project(":treehouse:schema:widget")
-                api project(":treehouse:foundation")
+                api project(":treehouse:componentbox")
                 api project(":treehouse:state")
                 api libs.redwood.layout.widget
             }

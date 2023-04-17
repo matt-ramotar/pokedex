@@ -21,6 +21,7 @@ anvil-gradle-plugin = { group = "com.squareup.anvil", name = "gradle-plugin", ve
 dagger-dagger = { group = "com.google.dagger", name = "dagger", version.ref = "dagger" }
 dagger-compiler = { group = "com.google.dagger", name = "dagger-compiler", version.ref = "dagger" }
 
+kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version = "0.4.0" }
 
 ktor-client-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor" }
 ktor-client-cio = { group = "io.ktor", name = "ktor-client-cio", version.ref = "ktor" }
@@ -42,6 +43,7 @@ kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serializa
 
 xmlutil-serialization = 'io.github.pdvrieze.xmlutil:serialization:0.85.0'
 
+androidx-compose-animation = { module = "androidx.compose.animation:animation", version = "1.4.1" }
 dokkaPlugin = "org.jetbrains.dokka:dokka-gradle-plugin:1.8.10"
 spotlessPlugin = "com.diffplug.spotless:spotless-plugin-gradle:6.17.0"
 gradleMavenPublishPlugin = "com.vanniktech:gradle-maven-publish-plugin:0.25.1"

@@ -3,6 +3,7 @@ package com.dropbox.pokedex.android.common.treehouse
 import androidx.compose.runtime.Composable
 import app.cash.redwood.treehouse.AppService
 import app.cash.redwood.treehouse.TreehouseApp
+import com.dropbox.pokedex.android.common.treehouse.widget.PokedexComponentBox
 import com.dropbox.pokedex.android.common.treehouse.widget.PokedexImage
 import com.dropbox.pokedex.android.common.treehouse.widget.PokedexText
 import com.dropbox.pokedex.android.common.treehouse.widget.PokedexTextInput
@@ -28,5 +29,7 @@ class AndroidPokedexWidgetFactory<A : AppService>(
     override fun AnnotatedString(): AnnotatedString<() -> Unit> {
         TODO("Not yet implemented")
     }
+
+    override fun ComponentBox(): ComponentBox<() -> Unit> = PokedexComponentBox()
 
 }

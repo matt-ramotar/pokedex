@@ -12,7 +12,8 @@ import app.cash.redwood.treehouse.lazylayout.RedwoodTreehouseLazyLayout
         Image::class,
         Icon::class,
         ContainedButton::class,
-        AnnotatedString::class
+        AnnotatedString::class,
+        ComponentBox::class
     ],
     dependencies = [
         Dependency(1, RedwoodLayout::class),

@@ -3,8 +3,8 @@ package com.dropbox.pokedex.treehouse.schema
 import app.cash.redwood.schema.Default
 import app.cash.redwood.schema.Property
 import app.cash.redwood.schema.Widget
-import com.dropbox.pokedex.treehouse.foundation.Color
-import com.dropbox.pokedex.treehouse.foundation.TextStyle
+import com.dropbox.pokedex.treehouse.componentbox.Color
+import com.dropbox.pokedex.treehouse.componentbox.TextStyle
 
 /**
  * Represents a piece of text with optional color and text style information.

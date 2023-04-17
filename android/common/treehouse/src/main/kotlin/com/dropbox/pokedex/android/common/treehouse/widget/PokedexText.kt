@@ -11,12 +11,12 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.TextUnitType
 import app.cash.redwood.LayoutModifier
 import com.dropbox.pokedex.android.common.pig.PIG
-import com.dropbox.pokedex.treehouse.foundation.Color
+import com.dropbox.pokedex.treehouse.componentbox.Color
 import com.dropbox.pokedex.treehouse.schema.widget.Text
-import com.dropbox.pokedex.treehouse.foundation.Color as PokedexColor
-import com.dropbox.pokedex.treehouse.foundation.FontWeight as PokedexFontWeight
-import com.dropbox.pokedex.treehouse.foundation.TextStyle as PokedexTextStyle
-import com.dropbox.pokedex.treehouse.foundation.TextUnit as PokedexTextUnit
+import com.dropbox.pokedex.treehouse.componentbox.Color as PokedexColor
+import com.dropbox.pokedex.treehouse.componentbox.FontWeight as PokedexFontWeight
+import com.dropbox.pokedex.treehouse.componentbox.TextStyle as PokedexTextStyle
+import com.dropbox.pokedex.treehouse.componentbox.TextUnit as PokedexTextUnit
 
 
 internal class PokedexText : Text<@Composable () -> Unit> {
@@ -76,6 +76,8 @@ fun PokedexTextStyle?.compose() = TextStyle(
 fun PokedexColor?.compose() = when (this) {
     is Color.Name -> when (value) {
         "onBackground" -> PIG.Colors.standard.text
+        "opacity1" -> PIG.Colors.opacity1
+        "opacity3" -> PIG.Colors.opacity3
         else -> PIG.Colors.green.text
     }
 

@@ -25,6 +25,9 @@ import com.dropbox.pokedex.treehouse.zipline.PokedexPresenter
 import com.squareup.anvil.annotations.ContributesBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.serialization.json.Json
 import okhttp3.OkHttpClient
@@ -42,6 +45,15 @@ class PokedexApp @Inject constructor() : Application(), ComponentHolder {
         val widgets = buildWidgets()
         this.component = DaggerAppComponent.factory().create(this.treehouseApp, applicationContext, widgets)
         println("set treehouse app + widgets + component")
+    }
+
+    private fun <T> repeatFlow(content: T, delayMillis: Long): Flow<T> {
+        return flow {
+            while (true) {
+                emit(content)
+                delay(delayMillis)
+            }
+        }
     }
 
     private suspend fun buildWidgets(): TreehouseView.WidgetSystem {
@@ -75,8 +87,9 @@ class PokedexApp @Inject constructor() : Application(), ComponentHolder {
             manifestVerifier = ManifestVerifier.NO_SIGNATURE_CHECKS
         )
 
-        val manifestUrlFlow = flowOf("http://10.0.2.2:8080/manifest.zipline.json")
+        val manifestUrlFlow = repeatFlow("http://10.0.2.2:8080/manifest.zipline.json", 20)
             .withDevelopmentServerPush(ziplineHttpClient)
+
 
         val treehouseApp = treehouseAppFactory.create(
             appScope = coroutineScope,

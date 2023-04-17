@@ -2,21 +2,24 @@ package com.dropbox.pokedex.treehouse.presenter
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import app.cash.redwood.layout.api.Constraint
 import app.cash.redwood.layout.api.CrossAxisAlignment
 import app.cash.redwood.layout.api.Margin
 import app.cash.redwood.layout.compose.Column
-import com.dropbox.pokedex.common.api.RealPokeApi
 import com.dropbox.pokedex.common.client.HttpClient
-import com.dropbox.pokedex.common.entity.Pokemon
-import com.dropbox.pokedex.treehouse.foundation.Color
-import com.dropbox.pokedex.treehouse.foundation.FontWeight
-import com.dropbox.pokedex.treehouse.foundation.TextStyle
-import com.dropbox.pokedex.treehouse.foundation.sp
-import com.dropbox.pokedex.treehouse.schema.compose.Image
+import com.dropbox.pokedex.treehouse.componentbox.Component
+import com.dropbox.pokedex.treehouse.componentbox.Modifier
+import com.dropbox.pokedex.treehouse.presenter.componentbox.component.*
+import com.dropbox.pokedex.treehouse.presenter.componentbox.forest
+import com.dropbox.pokedex.treehouse.presenter.componentbox.tree
+import com.dropbox.pokedex.treehouse.schema.compose.ComponentBox
 import com.dropbox.pokedex.treehouse.schema.compose.Text
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+
 
 @Composable
 fun Pokedex(
@@ -24,26 +27,43 @@ fun Pokedex(
     columnProvider: ColumnProvider
 ) {
 
-    val model = remember {
-        PokemonModel(
-            api = RealPokeApi(
-                client = httpClient
-            )
-        )
-    }
+    val tile1 = pokemonTile(1, 1200)
+    val tile2 = pokemonTile(2, 1600)
+    val tile3 = pokemonTile(3, 800)
+    val tile4 = pokemonTile(4, 2000)
 
-    LaunchedEffect(Unit) {
-        model.load(1)
-    }
+    SkeletonLoadingContainer {
+        ComponentBox(componentBox = forest {
+            if (tile1.value != null) {
+                tree("tile1", tree(tile1.value!!))
+            }
 
-    val state = model.state.collectAsState()
+            if (tile2.value != null) {
+                tree("tile2", tree(tile2.value!!))
+            }
 
-    when (val pokemon = state.value.pokemon) {
-        null -> Loading()
-        else -> Pokemon(pokemon)
+            if (tile3.value != null) {
+                tree("tile3", tree(tile3.value!!))
+            }
+
+            if (tile4.value != null) {
+                tree("tile4", tree(tile4.value!!))
+            }
+        })
     }
 }
 
+@Composable
+private fun PokemonButton(): Component {
+    return containedButton {
+        child(text("Learn more"))
+    }
+}
+
+@Composable
+private fun PokemonHeading(): Component {
+    return text("Pokemon")
+}
 
 @Composable
 private fun Loading() {
@@ -56,21 +76,34 @@ private fun Loading() {
     }
 }
 
+
 @Composable
-private fun Pokemon(pokemon: Pokemon) {
-    val url = "https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${pokemon.id}.svg"
+private fun pokemonTile(id: Int, delay: Long): StateFlow<Component?> {
+    val url = "https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${id}.svg"
 
-    Column(
-        width = Constraint.Fill,
-        horizontalAlignment = CrossAxisAlignment.Center,
-        margin = Margin(horizontal = 24),
-    ) {
-        Image(url)
+    val color = LocalSkeletonLoadingColor.current
 
-        Text(
-            text = pokemon.name,
-            style = TextStyle(color = Color.named("onBackground"), fontWeight = FontWeight.Bold, fontSize = 48.sp)
-        )
+    val isLoading = remember { mutableStateOf(true) }
+
+    val stateFlow = MutableStateFlow<Component?>(null)
+    val state = stateFlow
+
+    LaunchedEffect(Unit) {
+        delay(delay)
+        isLoading.value = false
     }
+
+    stateFlow.value = when (isLoading.value) {
+        true -> box(modifier = Modifier(fillMaxSize = true, background = color), children = {})
+        false -> column(modifier = Modifier(fillMaxSize = true)) {
+            child(text(id.toString()))
+            child(text(id.toString()))
+            child(text(id.toString()))
+        }
+    }
+
+    return state
 }
+
+
 
