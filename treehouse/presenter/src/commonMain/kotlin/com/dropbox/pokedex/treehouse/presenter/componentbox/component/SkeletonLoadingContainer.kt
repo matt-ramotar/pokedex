@@ -1,65 +1,25 @@
 package com.dropbox.pokedex.treehouse.presenter.componentbox.component
 
-import androidx.compose.runtime.*
-import com.dropbox.pokedex.treehouse.componentbox.*
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
+import androidx.compose.runtime.Composable
+import com.dropbox.pokedex.treehouse.componentbox.Color
+import com.dropbox.pokedex.treehouse.componentbox.DurationBasedAnimationSpec
+import com.dropbox.pokedex.treehouse.componentbox.Easing
+import com.dropbox.pokedex.treehouse.componentbox.InfiniteRepeatableSpec
+import com.dropbox.pokedex.treehouse.componentbox.InfiniteTransition
+import com.dropbox.pokedex.treehouse.componentbox.SkeletonLoadingContainer
 
 
 @Composable
 fun skeletonLoadingContainer(
-    root: Component,
-    infiniteTransition: InfiniteTransition.AnimateColor
-): SkeletonLoadingContainer = SkeletonLoadingContainer(root, infiniteTransition)
-
-
-val LocalSkeletonLoadingColor = staticCompositionLocalOf { Color.named("opacity1") }
-
-
-@Composable
-fun infiniteRepeatable(
-    initialValue: Color,
-    targetValue: Color,
-    animationSpec: InfiniteRepeatableSpec
-): StateFlow<Color> = MutableStateFlow(initialValue).also { state ->
-    LaunchedEffect(initialValue) {
-        when (val animation = animationSpec.animation) {
-            is DurationBasedAnimationSpec.TweenSpec -> {
-                while (true) {
-                    delay(animation.durationMillis)
-                    if (state.value == initialValue) {
-                        state.value = targetValue
-                    } else {
-                        state.value = initialValue
-                    }
-                }
-
-            }
-        }
-    }
-}
-
-@Composable
-fun SkeletonLoadingContainer(
-    content: @Composable () -> Unit,
-) {
-
-    val infiniteRepeatableSpec = infiniteRepeatable(
+    infiniteTransition: InfiniteTransition.AnimateColor = InfiniteTransition.AnimateColor(
         initialValue = Color.named("opacity1"),
         targetValue = Color.named("opacity3"),
         animationSpec = InfiniteRepeatableSpec(
             animation = DurationBasedAnimationSpec.TweenSpec(
-                durationMillis = 10,
-                delay = 0,
-                easing = Easing.LinearEasing
+                708,
+                0,
+                Easing.LinearEasing
             )
         )
     )
-    val color = remember { infiniteRepeatableSpec }
-
-    CompositionLocalProvider(
-        LocalSkeletonLoadingColor provides color.value,
-        content = content,
-    )
-}
+): SkeletonLoadingContainer = SkeletonLoadingContainer(infiniteTransition)

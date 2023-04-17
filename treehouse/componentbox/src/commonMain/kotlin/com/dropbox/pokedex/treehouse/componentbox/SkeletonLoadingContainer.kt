@@ -4,7 +4,6 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class SkeletonLoadingContainer(
-    val root: Component,
     val infiniteTransition: InfiniteTransition.AnimateColor
 ) : Component
 
@@ -28,7 +27,10 @@ data class InfiniteRepeatableSpec(
 
 
 @Serializable
-data class StartOffset(val offsetMillis: Int, val offsetType: StartOffsetType = StartOffsetType.Delay)
+data class StartOffset(
+    val offsetMillis: Int,
+    val offsetType: StartOffsetType = StartOffsetType.Delay
+)
 
 @Serializable
 enum class StartOffsetType {
